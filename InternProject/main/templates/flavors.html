@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seasonal Flavors</title>
+</head>
+<style>
+    body
+    {
+        font-family: sans-serif;
+    
+    h1,h2
+        {
+        color: rgb(184, 43, 43);
+        text-align: center;
+        }  
+    }
+    div{
+        position: relative;
+        top:50px;
+        left:550px
+    }
+    
+</style>
+<body>
+    <h1>Seasonal Flavors</h1>
+    <h2>Add New Flavors</h2>
+    <div>
+    <form method="POST">
+        <table >
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td><input type="text" name="description"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Add Flavor"></td>    
+            </tr>
+            <tr>
+                 <a href="{{ url_for('index') }}">Back to Home</a>
+
+            </tr>
+        </table>
+    </form>
+    </div>
+ 
+</body>
+</html>

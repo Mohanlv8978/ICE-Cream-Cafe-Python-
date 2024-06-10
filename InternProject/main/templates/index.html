@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ice Cream Parlor</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        
+
+        h1 {
+           
+            text-align: center;
+            }
+        }
+        nav {
+            text-align: center; 
+        }
+        nav a {
+           
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #d8d6d6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome To Ice Cream Parlor</h1>
+    <nav>
+        <a href="{{ url_for('flavors') }}">Seasonal Flavors</a>
+        <a href="{{ url_for('inventory') }}">Ingredient Inventory</a>
+        <a href="{{ url_for('suggestions') }}">Customer Suggestions</a>
+        <a href="{{ url_for('cart') }}">Cart</a>
+    </nav>
+</body>
+</html>

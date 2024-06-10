@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ingredient Inventory</title>
+</head>
+<style>
+    body
+    {
+        font-family: sans-serif;
+    
+    h1,h2
+        {
+        color: rgb(184, 43, 43);
+        text-align: center;
+        }  
+    }
+    div{
+        position: relative;
+        top:50px;
+        left:550px
+    }
+    
+</style>
+
+<body>
+    <h1>Ingredients</h1>
+    <h2>Add New Ingredient</h2>
+<div>
+    <form method="POST">
+    <table>
+        <tr>
+            <td>Ingredient:</td>
+            <td><input type="text" name="ingredient"></td>
+        </tr>
+        <tr>
+            <td> Quantity:</td>
+            <td> <input type="number"name ="quantity"> </td>
+        </tr>
+        <tr>
+            <a href="{{ url_for('index') }}">Back to Home</a>
+        </tr>
+       <tr>
+            <td> <input type="submit" value="Add Ingredient"></td>
+       </tr>
+    </table>
+    </form>
+</div>
+</body>
+</html>

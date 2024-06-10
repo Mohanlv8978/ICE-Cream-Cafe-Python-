@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart</title>
+</head>
+<body>
+    <h1>Cart</h1>
+    <form action="" method="post">
+        <label for="flavor_id">Select Flavor:</label>
+        <select name="flavor_id">
+            {% for flavor in flavors %}
+                <option value="{{ flavor.id }}">{{ flavor.name }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <label for="ingredient_id">Select Ingredient:</label>
+        <select name="ingredient_id">
+            {% for ingredient in ingredients %}
+                <option value="{{ ingredient.id }}">{{ ingredient.ingredient }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <label for="suggestion_id">Select Suggestion:</label>
+        <select name="suggestion_id">
+            {% for suggestion in suggestions %}
+                <option value="{{ suggestion.id }}">{{ suggestion.flavor }} ({{ suggestion.allergies }})</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <input type="submit" value="Add to Cart">
+    </form>
+    {% if cart_items %}
+        <h2>Cart Items:</h2>
+        <ul>
+            {% for item in cart_items %}
+                {% if item.__class__.__name__ == 'Flavor' %}
+                    <li>{{ item.name }} ({{ item.description }})</li>
+                {% elif item.__class__.__name__ == 'Inventory' %}
+                    <li>{{ item.ingredient }} (Quantity: {{ item.quantity }})</li>
+                {% elif item.__class__.__name__ == 'Suggestion' %}
+                    <li>{{ item.flavor }} ({{ item.allergies }})</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>

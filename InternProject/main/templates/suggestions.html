@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Suggestions</title>
+</head>
+<style>
+    body
+    {
+        font-family: sans-serif;
+    
+    h1
+        {
+        color: rgb(184, 43, 43);
+        text-align: center;
+        }  
+    }
+    div{
+        position: relative;
+        top:50px;
+        left:550px
+    }
+</style>
+
+<body>
+    <h1>Customer Suggestions</h1>
+    <div>
+    <form method="POST">
+    <table>
+        <tr>
+            <td>Flavor:</td>
+            <td><input type="text" name="flavor"></td>
+        </tr>
+        <tr>
+            <td>Allergie:</td>
+            <td><input type="text" name="allergies"></td>
+        </tr>
+        <tr>
+            <td> <input type="submit" value="Submit"></td>
+        </tr>
+        <tr>
+            <a href="{{ url_for('index') }}">Back to Home</a>
+        </tr> 
+    </table>
+    </form>
+</div>
+</body>
+</html>
